@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cafdb889103da636277ca6eec9ce7746",
+    "content-hash": "df969cbff312778dcbfd2bc786bbd0c9",
     "packages": [
         {
             "name": "brick/math",
@@ -5190,6 +5190,61 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.6"
             },
             "time": "2023-01-03T09:29:04+00:00"
+        },
+        {
+            "name": "uwla/lacl",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uwla/lacl.git",
+                "reference": "6df7cf4bfbd87d663f5ff872b071cb96d7057500"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uwla/lacl/zipball/6df7cf4bfbd87d663f5ff872b071cb96d7057500",
+                "reference": "6df7cf4bfbd87d663f5ff872b071cb96d7057500",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^10.0",
+                "illuminate/database": "^10.0"
+            },
+            "require-dev": {
+                "laravel/sanctum": "^3.2",
+                "laravel/ui": "^4.2",
+                "orchestra/testbench": "^8.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Uwla\\Lacl\\AclServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tests\\": "tests/",
+                    "Uwla\\Lacl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "uwla"
+                }
+            ],
+            "description": "Laravel Access Control List",
+            "homepage": "https://github.com/uwla/lacl",
+            "support": {
+                "issues": "https://github.com/uwla/lacl/issues",
+                "source": "https://github.com/uwla/lacl/tree/v1.2.2"
+            },
+            "time": "2023-02-21T22:07:30+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
