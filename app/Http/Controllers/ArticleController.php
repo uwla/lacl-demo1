@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Models\User;
+use App\Http\Requests\StoreArticleRequest;
+use App\Http\Requests\UpdateArticleRequest;
+use App\Models\Article;
 use Illuminate\Http\Response;
 
-class UserController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Create the controller instance.
@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->authorizeResource(User::class, 'user');
+        $this->authorizeResource(Article::class, 'article');
     }
 
     /**
@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function index(): Response
     {
-        return new Response(User::all());
+        return new Response(Article::all());
     }
 
     /**
@@ -35,45 +35,45 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUserRequest $request): Response
+    public function store(StoreArticleRequest $request): Response
     {
-        $user = User::create($request->all());
-        return new Response($user);
+        $article = Article::create($request->all());
+        return new Response($article);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  App\Models\User  $user
+     * @param  App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user): Response
+    public function show(Article $article): Response
     {
-        return new Response($user);
+        return new Response($article);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  App\Models\User  $user
+     * @param  App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $user): Response
+    public function update(UpdateArticleRequest $request, Article $article): Response
     {
-        $user->update($request->all());
-        return new Response($user);
+        $article->update($request->all());
+        return new Response($article);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  App\Models\User  $user
+     * @param  App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user): Response
+    public function destroy(Article $article): Response
     {
-        $user->delete();
-        return new Response($user);
+        $article->delete();
+        return new Response($article);
     }
 }

@@ -2,16 +2,16 @@
 
 namespace App\Policies;
 
-use App\Models\User;
+use App\Models\Article;
 use Uwla\Lacl\Traits\ResourcePolicy;
 use Uwla\Lacl\Contracts\ResourcePolicy as ResourcePolicyContract;
 
-class UserPolicy implements ResourcePolicyContract
+class ArticlePolicy implements ResourcePolicyContract
 {
     use ResourcePolicy;
 
     public function getResourceModel()
     {
-        return User::class;
+        return Article::class;
     }
 }
