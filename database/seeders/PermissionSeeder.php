@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\User;
 use Uwla\Lacl\Models\Permission;
 use Uwla\Lacl\Models\Role;
@@ -23,6 +24,7 @@ class PermissionSeeder extends Seeder
             "user" => User::class,
             "role" => Role::class,
             "permission" => Permission::class,
+            "article" => Article::class,
         ];
         $actions = ["create", "delete", "forceDelete", "update", "view"];
         $actionSuffix = "Any";

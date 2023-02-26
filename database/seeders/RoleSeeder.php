@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Article;
 use App\Models\User;
 use Uwla\Lacl\Models\Permission;
 use Uwla\Lacl\Models\Role;
@@ -31,13 +32,19 @@ class RoleSeeder extends Seeder
             'name' => 'chief manager',
             'description' => 'manages access control'
         ]);
+        $editor = Role::create([
+            'name' => 'editor',
+            'description' => 'manages articles'
+        ]);
 
         $adminPermissions = Permission::all();
         $userManagerPermissions = Permission::where('model', User::class)->get();
         $managerPermissions = Permission::whereIn('model', [User::class, Role::class])->get();
+        $editorPermissions = Permission::where('model', Article::class)->get();
 
         $admin->addPermissions($adminPermissions);
         $userManager->addPermissions($userManagerPermissions);
         $manager->addPermissions($managerPermissions);
+        $editor->addPermissions($editorPermissions);
     }
 }
