@@ -73,7 +73,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article): Response
     {
-        $article->delete();
+        // $article->delete(); // actually, we do not want to delete. Just pretend to have deleted
         return new Response($article);
     }
 }
